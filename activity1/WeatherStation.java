@@ -32,6 +32,7 @@ public class WeatherStation implements Runnable {
         int reading ;           // actual sensor reading.
         double celsius ;        // sensor reading transformed to celsius
         final int KTOC = -27315 ;   // Convert raw Kelvin reading to Celsius
+        double kelvin ;         // Convert Celsius to Kelvin
 
         while( true ) {
             try {
@@ -58,7 +59,7 @@ public class WeatherStation implements Runnable {
              * for more information on formatting output.
              */
             //
-            System.out.printf("Reading is %6.2f degrees C%n", celsius, "and %6.2f degrees K%n", kelvin) ;
+            System.out.printf("Reading is %6.2f degrees C and %6.2f degrees K%n", celsius, kelvin) ;
         }
     }
 
