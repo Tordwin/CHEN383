@@ -40,6 +40,7 @@ public class WeatherStation implements Runnable {
 
             reading = sensor.reading() ;
             celsius = (reading + KTOC) / 100.0 ;
+            kelvin = celsius + 273.15 ;
             /*
              * System.out.printf prints formatted data on the output screen.
              *
@@ -57,7 +58,7 @@ public class WeatherStation implements Runnable {
              * for more information on formatting output.
              */
             //
-            System.out.printf("Reading is %6.2f degrees C%n", celsius) ;
+            System.out.printf("Reading is %6.2f degrees C%n", celsius, "and %6.2f degrees K%n", kelvin) ;
         }
     }
 
