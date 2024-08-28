@@ -59,7 +59,7 @@ public class WeatherStation implements Runnable {
              * for more information on formatting output.
              */
             //
-            System.out.printf("Reading is %6.2f degrees C and %6.2f degrees K%n", celsius, kelvin) ;
+            System.out.printf("Reading is%6.2f degrees C and %6.2f degrees K%n", celsius, kelvin) ;
         }
     }
 
