@@ -105,6 +105,5 @@ public class AWTUI extends Frame {
         frame.add(kelvinLabel,celsiuseLabel);
         frame.pack();
         frame.setVisible(true);
-        
     }
 }
