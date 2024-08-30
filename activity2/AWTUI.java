@@ -94,4 +94,17 @@ public class AWTUI extends Frame {
 
         return label ;
     }
+
+    public static void main(String[] args) {
+        AWTUI awtui = new AWTUI();
+        Panel kelvinPanel = new Panel(new GridLayout(2,1)) ;
+        Panel celsiusPanel = new Panel(new GridLayout(2,1)) ;
+        Label kelvinLabel = awtui.setLabel("Kelvin", kelvinPanel);
+        Label celsiuseLabel = awtui.setLabel("Celsius", celsiusPanel);
+        Frame frame = new Frame();
+        frame.add(kelvinLabel,celsiuseLabel);
+        frame.pack();
+        frame.setVisible(true);
+        
+    }
 }
