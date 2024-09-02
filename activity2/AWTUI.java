@@ -97,13 +97,22 @@ public class AWTUI extends Frame {
 
     public static void main(String[] args) {
         AWTUI awtui = new AWTUI();
-        Panel kelvinPanel = new Panel(new GridLayout(2,1)) ;
-        Panel celsiusPanel = new Panel(new GridLayout(2,1)) ;
-        Label kelvinLabel = awtui.setLabel("Kelvin", kelvinPanel);
-        Label celsiuseLabel = awtui.setLabel("Celsius", celsiusPanel);
-        Frame frame = new Frame();
-        frame.add(kelvinLabel,celsiuseLabel);
-        frame.pack();
-        frame.setVisible(true);
+        new Thread(() -> {
+            double tempC = 20.0;
+            while (true) {
+                tempC += (Math.random() * 2 - 1);
+                double tempK = tempC + 273.15;
+
+                awtui.celsiusField.setText(String.format("%.2f", tempC));
+                awtui.kelvinField.setText(String.format("%.2f", tempK));
+
+                try {
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e) {
+                    System.out.println(e);
+                }
+            }
+        }).start();
     }
 }
