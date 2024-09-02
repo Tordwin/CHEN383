@@ -108,4 +108,23 @@ public class SwingUI extends JFrame {
 
         return label ;
     }
+
+    public static void main(String[] args) {
+        SwingUI swingUI = new SwingUI();
+        new Thread(() -> {
+            double tempC = 20.0;
+            while (true){
+                tempC += (Math.random() * 2 - 1);
+                double tempK = tempC + 273.15;
+                swingUI.setCelsiusJLabel(tempC);
+                swingUI.setKelvinJLabel(tempK);
+                try {
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException ie) {
+                    System.out.println(ie);
+                }
+            }
+        }).start();
+    }
 }
