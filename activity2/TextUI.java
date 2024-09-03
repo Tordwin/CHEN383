@@ -10,8 +10,8 @@ public class TextUI {
                 try {
                     Thread.sleep(1000);
                 }
-                catch (InterruptedException ie) {
-                    System.out.println(ie);
+                catch (Exception e) {
+                    System.out.println(e);
                 }
             }
         }).start();
