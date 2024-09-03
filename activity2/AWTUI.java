@@ -102,8 +102,8 @@ public class AWTUI extends Frame {
             while (true) {
                 tempC += (Math.random() * 2 - 1);
                 double tempK = tempC + 273.15;
-                awtui.celsiusField.setText(String.format("%.2f", tempC));
-                awtui.kelvinField.setText(String.format("%.2f", tempK));
+                awtui.celsiusField.setText(String.format("%6.2f", tempC));
+                awtui.kelvinField.setText(String.format("%6.2f", tempK));
                 try {
                     Thread.sleep(1000);
                 }

@@ -5,8 +5,8 @@ public class TextUI {
             while (true){
                 tempC += (Math.random() * 2 - 1);
                 double tempK = tempC + 273.15;
-                System.out.println("Reading is " + String.format("%.2f", tempC) 
-                + " degrees C and " + String.format("%.2f", tempK) + " degrees K");
+                System.out.println("Reading is " + String.format("%6.2f", tempC) 
+                + " degrees C and " + String.format("%6.2f", tempK) + " degrees K");
                 try {
                     Thread.sleep(1000);
                 }
