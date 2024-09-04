@@ -21,6 +21,7 @@
  * to access the temperature in different schemes (Celsius, Kelvin, etc.)
  */
 import java.util.Observable ;
+@SuppressWarnings("deprecation") // Suppressing deprecated observer
 
 public class WeatherStation extends Observable implements Runnable {
 
