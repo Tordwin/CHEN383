@@ -15,8 +15,10 @@
  * The main method for the text based monitoring application
  * is here as well.
  */
+
 import java.util.Observer ;
 import java.util.Observable ;
+@SuppressWarnings("deprecation") // Suppressing deprecated observer
 
 public class TextUI implements Observer {
     private final WeatherStation station ;
@@ -57,7 +59,7 @@ public class TextUI implements Observer {
         WeatherStation ws = new WeatherStation() ;
         Thread thread = new Thread(ws) ;
         TextUI ui = new TextUI(ws) ;
-
+        ui.update(ws, ui);
         thread.start() ;
     }
 }
