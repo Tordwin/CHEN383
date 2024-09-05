@@ -123,6 +123,7 @@ public class SwingUI extends JFrame implements Observer {
     public static void main(String[] args) {
         WeatherStation ws = new WeatherStation();
         SwingUI swingUI = new SwingUI(ws);
-        new Thread(ws).start();
+        Thread thread = new Thread(ws);
+        thread.start();
     }
 }
