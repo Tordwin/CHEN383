@@ -55,12 +55,11 @@ public class TextUI implements Observer {
     /*
      * Start the application.
      */
+    @SuppressWarnings("unused") /* Suppresses warning for ui as it is not being used (So i dont have to see a orange squiggly line) */
     public static void main(String[] args) {
         WeatherStation ws = new WeatherStation() ;
         Thread thread = new Thread(ws) ;
         TextUI ui = new TextUI(ws) ;
-
-        SwingUI swingUi = new SwingUI();
         thread.start() ;
     }
 }
