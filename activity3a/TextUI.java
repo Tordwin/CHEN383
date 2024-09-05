@@ -59,7 +59,8 @@ public class TextUI implements Observer {
         WeatherStation ws = new WeatherStation() ;
         Thread thread = new Thread(ws) ;
         TextUI ui = new TextUI(ws) ;
-        ui.update(ws, ui);
+
+        SwingUI swingUi = new SwingUI();
         thread.start() ;
     }
 }

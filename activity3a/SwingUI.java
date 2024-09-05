@@ -111,6 +111,10 @@
  
      public static void main(String[] args) {
          SwingUI swingUI = new SwingUI();
+
+
+
+         
          new Thread(() -> {
              double tempC = 20.0;
              while (true){
