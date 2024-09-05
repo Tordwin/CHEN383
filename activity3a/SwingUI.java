@@ -21,9 +21,7 @@ import javax.swing.JLabel ;
 import javax.swing.JPanel ;
 import java.util.Observable ;
 import java.util.Observer ;
-@SuppressWarnings("deprecation") // Suppressing deprecated observer
-
-//import java.text.DecimalFormat ;
+@SuppressWarnings("deprecation") /* Suppressing deprecated observer */
 
 public class SwingUI extends JFrame implements Observer {
     private JLabel celsiusField ;   // put current celsius reading here
@@ -121,7 +119,7 @@ public class SwingUI extends JFrame implements Observer {
         }
     }
     
-    @SuppressWarnings("unused") // Suppresses warning for swingUI as it is not being used (So i dont have to see a orange squiggly line)
+    @SuppressWarnings("unused") /* Suppresses warning for swingUI as it is not being used (So i dont have to see a orange squiggly line) */
     public static void main(String[] args) {
         WeatherStation ws = new WeatherStation();
         SwingUI swingUI = new SwingUI(ws);
