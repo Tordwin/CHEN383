@@ -4,5 +4,18 @@ Activity 3a
 build.txt
 
 ////////////////////////////////////////////////////////////////////
-
+SwingUI
+--------------------------------------------------------------------
+SwingUI provides a graphical user interface using Swing.
+It is now updating with WeatherStation when it notifies its 
+observers. To check TextUI runs alongside with SwingUI and must
+output the same Celsius and Kelvin temperatures.
+--------------------------------------------------------------------
+How to Compile
+To compile SwingUI you must need KelvinTempSensor and WeatherStation
+files.
+1. Type "javac SwingUI.java" without quotations to compile the file.
+--------------------------------------------------------------------
+How to Run
+1. Type "java SwingUI" without quotations to run the program.
 ////////////////////////////////////////////////////////////////////
