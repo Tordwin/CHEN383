@@ -78,4 +78,12 @@ public class WeatherStation extends Observable implements Runnable {
     public synchronized double getKelvin() {
         return currentReading / 100.0 ;
     }
+
+    /* Add a method to the WeatherStation to return 
+     * the temperature in degrees Fahrenheit. 
+    */ 
+    public double getFahrenheit(){
+        var celsius = getCelsius();
+        return (celsius * 9/5) + 32;
+    }
 }
