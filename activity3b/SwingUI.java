@@ -26,6 +26,9 @@ import java.util.Observer ;
 public class SwingUI extends JFrame implements Observer {
     private JLabel celsiusField ;   // put current celsius reading here
     private JLabel kelvinField ;    // put current kelvin reading here
+    private JLabel fahrenheitField; // put current fahrenheit reading here
+    private JLabel mercuryField;    // put current inches reading here
+    private JLabel milibarsField;   // put current milibars reading here
     private WeatherStation station;
 
     /*
@@ -66,12 +69,36 @@ public class SwingUI extends JFrame implements Observer {
         kelvinField = createLabel("", panel) ;
 
         /*
+         * Set up Fahrenheit display.
+         */
+        panel = new JPanel(new GridLayout(2,1)) ;
+        this.add(panel) ;
+        createLabel(" Fahrenheit ", panel) ;
+        fahrenheitField = createLabel("", panel) ;
+
+        /*
          * Set up Celsius display.
          */
         panel = new JPanel(new GridLayout(2,1)) ;
         this.add(panel) ;
         createLabel(" Celsius ", panel) ;
         celsiusField = createLabel("", panel) ;
+
+        /*
+         * Set up inches of mercury display.
+         */
+        panel = new JPanel(new GridLayout(2,1)) ;
+        this.add(panel) ;
+        createLabel(" Inches ", panel) ;
+        mercuryField = createLabel("", panel) ;
+
+        /*
+         * Set up milibars display.
+         */
+        panel = new JPanel(new GridLayout(2,1)) ;
+        this.add(panel) ;
+        createLabel(" Milibars ", panel) ;
+        milibarsField = createLabel("", panel) ;
 
          /*
          * Set up the frame's default close operation pack its elements,
@@ -97,6 +124,29 @@ public class SwingUI extends JFrame implements Observer {
     }
 
     /*
+     * Set the label holding the Fahrenheit temperature.
+     */
+    public void setFahrenHeitJLabel(double temperature) {
+        fahrenheitField.setText(String.format("%6.2f", temperature)) ;
+    }
+
+    /*
+     * Set the label holding the Inches of mercury.
+     */
+    public void setInchesJLabel(double temperature) {
+        mercuryField.setText(String.format("%6.2f", temperature)) ;
+    }
+
+    /*
+     * Set the label holding the Milibars.
+     */
+    public void setMilibarsJLabel(double temperature) {
+        milibarsField.setText(String.format("%6.2f", temperature)) ;
+    }
+
+    
+
+    /*
      * Create a Label with the initial value <title>, place it in
      * the specified <panel>, and return a reference to the Label
      * in case the caller wants to remember it.
@@ -116,13 +166,15 @@ public class SwingUI extends JFrame implements Observer {
         if (station == obs){
             setCelsiusJLabel(station.getCelsius());
             setKelvinJLabel(station.getKelvin());
+            setFahrenHeitJLabel(station.getFahrenheit());
+            setInchesJLabel(station.getPressureMercury());
+            setMilibarsJLabel(station.getPressureMilibars());
         }
     }
     
     public static void main(String[] args) {
         WeatherStation ws = new WeatherStation();
         new SwingUI(ws);
-        new TextUI(ws); /* Used to check if the readings are the same */
         Thread thread = new Thread(ws);
         thread.start();
     }
