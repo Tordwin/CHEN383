@@ -51,7 +51,7 @@ public class TextUI implements Observer {
                 "Reading:   %6.2f C %6.2f F %6.2f K%n",
                 station.getCelsius(), station.getFahrenheit(), station.getKelvin()) ;
         System.out.printf(
-                "Pressure:  %6.2f inchess %6.2f mbar%n",
+                "Pressure:  %6.2f inches %6.2f mbar%n",
                 station.getPressureMercury(), station.getPressureMilibars()) ;
     }
 
@@ -61,6 +61,7 @@ public class TextUI implements Observer {
     public static void main(String[] args) {
         WeatherStation ws = new WeatherStation() ;
         Thread thread = new Thread(ws) ;
+        new SwingUI(ws);
         new TextUI(ws) ;
         thread.start() ;
     }

@@ -32,6 +32,7 @@ public class WeatherStation extends Observable implements Runnable {
     private final int KTOC = -27315 ;       // Kelvin to Celsius conversion.
 
     private int currentReading ;
+    private double currentPressure ;
 
     /*
      * When a WeatherStation object is created, it in turn creates the sensor
@@ -41,6 +42,7 @@ public class WeatherStation extends Observable implements Runnable {
         barometerSensor = new Barometer();
         sensor = new KelvinTempSensor() ;
         currentReading = sensor.reading() ;
+        currentPressure = barometerSensor.pressure();
     }
 
     /*
@@ -59,6 +61,7 @@ public class WeatherStation extends Observable implements Runnable {
              */
             synchronized(this) {
                 currentReading = sensor.reading() ;
+                currentPressure = barometerSensor.pressure();
             }
             setChanged() ;
             notifyObservers() ;
@@ -93,13 +96,13 @@ public class WeatherStation extends Observable implements Runnable {
      * the inches of mercury.
      */
     public synchronized double getPressureMercury(){
-        return barometerSensor.pressure();
+        return currentPressure;
     }
-    
+
     /* Add a method to the WeatherStation to return
      * the milibars of inches of mercury.
      */
     public synchronized double getPressureMilibars(){
-        return barometerSensor.pressure() * 33.864;
+        return currentPressure * 33.864;
     }
 }

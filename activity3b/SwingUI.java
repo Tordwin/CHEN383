@@ -69,20 +69,20 @@ public class SwingUI extends JFrame implements Observer {
         kelvinField = createLabel("", panel) ;
 
         /*
-         * Set up Fahrenheit display.
-         */
-        panel = new JPanel(new GridLayout(2,1)) ;
-        this.add(panel) ;
-        createLabel(" Fahrenheit ", panel) ;
-        fahrenheitField = createLabel("", panel) ;
-
-        /*
          * Set up Celsius display.
          */
         panel = new JPanel(new GridLayout(2,1)) ;
         this.add(panel) ;
         createLabel(" Celsius ", panel) ;
         celsiusField = createLabel("", panel) ;
+
+        /*
+         * Set up Fahrenheit display.
+         */
+        panel = new JPanel(new GridLayout(2,1)) ;
+        this.add(panel) ;
+        createLabel(" Fahrenheit ", panel) ;
+        fahrenheitField = createLabel("", panel) ;
 
         /*
          * Set up inches of mercury display.
@@ -175,6 +175,7 @@ public class SwingUI extends JFrame implements Observer {
     public static void main(String[] args) {
         WeatherStation ws = new WeatherStation();
         new SwingUI(ws);
+        new TextUI(ws);
         Thread thread = new Thread(ws);
         thread.start();
     }
