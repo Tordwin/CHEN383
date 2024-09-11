@@ -61,7 +61,6 @@ public class TextUI implements Observer {
     public static void main(String[] args) {
         WeatherStation ws = new WeatherStation() ;
         Thread thread = new Thread(ws) ;
-        new SwingUI(ws);
         new TextUI(ws) ;
         thread.start() ;
     }
