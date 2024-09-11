@@ -119,11 +119,10 @@ public class SwingUI extends JFrame implements Observer {
         }
     }
     
-    @SuppressWarnings("unused") /* Suppresses warning for swingUI as it is not being used (So i don't have to see a orange squiggly line) */
     public static void main(String[] args) {
         WeatherStation ws = new WeatherStation();
-        SwingUI swingUI = new SwingUI(ws);
-        TextUI textUI = new TextUI(ws); /* Used to check if the readings are the same */
+        new SwingUI(ws);
+        new TextUI(ws); /* Used to check if the readings are the same */
         Thread thread = new Thread(ws);
         thread.start();
     }

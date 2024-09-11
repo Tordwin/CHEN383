@@ -48,18 +48,20 @@ public class TextUI implements Observer {
          * Retrieve and print the temperatures.
          */
         System.out.printf(
-                "Reading is %6.2f degrees C and %6.2f degrees K%n",
-                station.getCelsius(), station.getKelvin()) ;
+                "Reading:   %6.2f C %6.2f F %6.2f K%n",
+                station.getCelsius(), station.getFahrenheit(), station.getKelvin()) ;
+        System.out.printf(
+                "Pressure:  %6.2f inchess %6.2f mbar%n",
+                station.getPressureMercury(), station.getPressureMilibars()) ;
     }
 
     /*
      * Start the application.
      */
-    @SuppressWarnings("unused") /* Suppresses warning for ui as it is not being used (So i dont have to see a orange squiggly line) */
     public static void main(String[] args) {
         WeatherStation ws = new WeatherStation() ;
         Thread thread = new Thread(ws) ;
-        TextUI ui = new TextUI(ws) ;
+        new TextUI(ws) ;
         thread.start() ;
     }
 }

@@ -84,8 +84,16 @@ public class WeatherStation extends Observable implements Runnable {
     /* Add a method to the WeatherStation to return 
      * the temperature in degrees Fahrenheit. 
     */ 
-    public double getFahrenheit(){
+    public synchronized double getFahrenheit(){
         var celsius = getCelsius();
         return (celsius * 9/5) + 32;
+    }
+
+    public synchronized double getPressureMercury(){
+        return barometerSensor.pressure();
+    }
+
+    public synchronized double getPressureMilibars(){
+        return barometerSensor.pressure() * 33.864;
     }
 }
