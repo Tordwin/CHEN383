@@ -89,10 +89,16 @@ public class WeatherStation extends Observable implements Runnable {
         return (celsius * 9/5) + 32;
     }
 
+    /* Add a method to the WeatherStation to return
+     * the inches of mercury.
+     */
     public synchronized double getPressureMercury(){
         return barometerSensor.pressure();
     }
-
+    
+    /* Add a method to the WeatherStation to return
+     * the milibars of inches of mercury.
+     */
     public synchronized double getPressureMilibars(){
         return barometerSensor.pressure() * 33.864;
     }
