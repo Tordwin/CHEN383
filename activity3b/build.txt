@@ -1,0 +1,37 @@
+SWEN.838.01
+Edwin Chen
+Activity 3a
+build.txt
+
+////////////////////////////////////////////////////////////////////
+SwingUI
+--------------------------------------------------------------------
+SwingUI provides a graphical user interface using Swing.
+It now includes a reading from the barometer that includes the:
+Inches of mercury
+Milibars of the inches of mercury
+--------------------------------------------------------------------
+How to Compile
+To compile SwingUI you must need KelvinTempSensor, WeatherStation,
+and Barometer files.
+1. Type "javac SwingUI.java" without quotations to compile the file.
+--------------------------------------------------------------------
+How to Run
+1. Type "java SwingUI" without quotations to run the program.
+////////////////////////////////////////////////////////////////////
+TextUI
+--------------------------------------------------------------------
+TextUI provides text based.
+It now includes a reading from the barometer that includes the:
+Inches of mercury
+Milibars of the inches of mercury
+--------------------------------------------------------------------
+How to Compile
+To compile SwingUI you must need KelvinTempSensor, WeatherStation,
+and Barometer files.
+1. Type "javac SwingUI.java" without quotations to compile the file.
+--------------------------------------------------------------------
+How to Run
+1. Type "java SwingUI" without quotations to run the program.
+////////////////////////////////////////////////////////////////////
+
