@@ -53,6 +53,7 @@ public class TextUI implements Observer {
         System.out.printf(
                 "Pressure:  %6.2f inches %6.2f mbar%n",
                 station.getPressureMercury(), station.getPressureMilibars()) ;
+        System.out.println();
     }
 
     /*
