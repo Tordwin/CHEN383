@@ -1,5 +1,5 @@
-Prefer to work with: 
-Prefer not to work with : 
+Prefer to work with: No preference
+Prefer not to work with : Drew Siberman
 Level of Java Proficiency: MEDIUM
 Your current section/status: SWEN.383.01
 Comments: 
