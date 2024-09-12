@@ -21,17 +21,17 @@ How to Run
 ////////////////////////////////////////////////////////////////////
 TextUI
 --------------------------------------------------------------------
-TextUI provides text based.
+TextUI provides a console text output of the temperatures.
 It now includes a reading from the barometer that includes the:
 Inches of mercury
 Milibars of the inches of mercury
 --------------------------------------------------------------------
 How to Compile
-To compile SwingUI you must need KelvinTempSensor, WeatherStation,
+To compile TextUI you must need KelvinTempSensor, WeatherStation,
 and Barometer files.
-1. Type "javac SwingUI.java" without quotations to compile the file.
+1. Type "javac TextUI.java" without quotations to compile the file.
 --------------------------------------------------------------------
 How to Run
-1. Type "java SwingUI" without quotations to run the program.
+1. Type "java TextUI" without quotations to run the program.
 ////////////////////////////////////////////////////////////////////
 
