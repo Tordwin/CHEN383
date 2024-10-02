@@ -1,0 +1,2 @@
+Clyde - Helped tidy up the diagram. Showed me how to show an implementation and extension on the class diagram.
+David - Helped me with the differences between private and public. Gave me feedback on why my sequence was wrong.
