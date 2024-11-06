@@ -1,0 +1,8 @@
+Assignment #7
+Edwin Chen
+
+1. The file class will serve as the component as it provides the interface for individual files and folders. The text and sound classes will act as the leaf. This is because they represent objects that don't contain other files. The folder class is the composite since it holds and manages multiple file objects (could be folder or files).
+
+2. The drawable class will be the component as it defines the interface for all the drawing objects. The rectangle and ellipse will be the leaf since they are individual shapes. The group class will be the composite as it manages the drawable objects and allows the user to group the shapes.
+
+3. An application that follows a composite pattern would be the WeatherStation. This is because WeatherStation has individual classes with their own actions. These classes would serve as the leaf components while the container (like SwingUI) would be a composite as it holds all of the data and manages them.
